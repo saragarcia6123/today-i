@@ -1,0 +1,39 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+CONFIG_PATH=$(jq -r '.config.path' "$SCRIPT_DIR/defaults.json")
+CONFIG_PATH="${CONFIG_PATH/\$HOME/$HOME}"
+
+HELP_FILE="$SCRIPT_DIR/help/main.txt"
+
+if [ $# -lt 1 ]; then
+    echo "No arguments provided"
+    cat "$HELP_FILE"
+  	exit 0
+fi
+
+command=$1
+shift
+
+if [[ "$2" == "--help" ]]; then
+  if [[ -f "$HELP_FILE" ]]; then
+    cat "$HELP_FILE"
+  else
+    echo "No help available for '$1'"
+  fi
+  exit 0
+fi
+
+case $command in
+  did)        "$SCRIPT_DIR/did.sh" "$@" ;;
+  history)    "$SCRIPT_DIR/history.sh" "$@" ;;
+  commit)     "$SCRIPT_DIR/commit.sh" ;;
+  push)       "$SCRIPT_DIR/push.sh" ;;
+  help)       cat "$HELP_FILE" ;;
+  *)
+    echo "Unknown command: $command"
+    cat "$HELP_FILE"
+    exit 1
+    ;;
+esac

@@ -1,0 +1,17 @@
+{
+  "config": {
+    "path": "$HOME/.config/.today-i"
+  },
+  "did": {
+    "message": "",
+    "commit": "true",
+    "push": "false"
+  },
+  "history": {
+    "window": 7,
+    "units": "d"
+  },
+  "cron": {
+    "schedule": "0 0 * * *"
+  }
+}

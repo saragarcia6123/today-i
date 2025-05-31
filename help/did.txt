@@ -1,0 +1,7 @@
+Usage: today-i did -m "message" [-p true]
+
+Options:
+    -m "message"        Message to log (required)
+    -r "repository"     Repository the log refers to
+    -c [true|false]     Commit after adding
+    -p [true|false]     Push after adding

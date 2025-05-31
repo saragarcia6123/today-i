@@ -1,0 +1,5 @@
+Usage: today-i history [options]
+
+Options:
+	-t NUM		Time window
+	-f [h|d]	Time unit: h = hours, d = days

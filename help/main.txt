@@ -1,0 +1,8 @@
+Usage: today-i <command> [options]
+
+Commands:
+  	did         Log a new message
+  	history		Show logged messages
+  	help		Show this help menu
+
+Use "today-i <command> --help" for more information about a command.
