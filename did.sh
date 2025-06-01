@@ -12,7 +12,7 @@ LOG_FILE="$CONFIG_PATH/log.csv"
 mkdir -p "$CONFIG_PATH"
 touch "$LOG_FILE"
 
-message=$(jq -r '.did.message' "$SCRIPT_DIR/defaults.json")
+message=""
 commit=$(jq -r '.did.commit' "$SCRIPT_DIR/defaults.json")
 push=$(jq -r '.did.push' "$SCRIPT_DIR/defaults.json")
 

@@ -18,8 +18,6 @@
 sudo apt install jq
 ```
 
-etc.
-
 *Tip: The name is `jq` on all systems.*
 
 ### [Cron](https://en.wikipedia.org/wiki/Cron)
@@ -48,8 +46,22 @@ source ~/.bashrc
 ```sh
 today-i did -m "Launched my SaaS MVP"
 ```
+
+The script will auto-add the cron job for you.
+
 See extra options in `/help/main.txt`
 
 ## Configuration
 
 You can freely customise the default configuration in `defaults.json`
+
+- config:
+  - `path`: The location to save logs to
+- did:
+  - `commit` (true/false): Whether to trigger commit on log
+  - `push` (true/false): Whether to trigger push on log
+- history:
+  - `window` (int): The oldest time to filter logs by
+  - `units` (d=days, h=hours): Units for window
+- cron:
+  - `schedule`: The cron schedule (See [Crontab Guru](https://crontab.guru/))

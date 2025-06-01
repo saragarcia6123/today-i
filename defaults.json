@@ -3,7 +3,6 @@
     "path": "$HOME/.config/.today-i"
   },
   "did": {
-    "message": "",
     "commit": "true",
     "push": "false"
   },
